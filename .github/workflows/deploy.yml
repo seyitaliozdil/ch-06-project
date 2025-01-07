@@ -10,10 +10,10 @@ jobs:
   test:
     env:                                                          # env variable job based demo 
       MONGODB_CLUSTER_ADDRESS: mongodb-test.l07s5.mongodb.net
-      MONGODB_USERNAME: maintain
-      MONGODB_PASSWORD: Sad6844!!!
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD}}
       PORT: 8080
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
       - name: Get Code
         uses: actions/checkout@v3
@@ -36,5 +36,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "MONGODB_USERNAME = ${{ env.MONGODB_USERNAME }}"
           echo "MONGO_DB_NAME = ${{ env.MONGODB_DB_NAME }}"
