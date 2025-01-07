@@ -5,10 +5,10 @@ on:
       - main
       - dev
 env:
-  MONGODB_DB_NAME: gha-demo
+  MONGODB_DB_NAME: gha-demo                                       # environment variable global demo
 jobs:
   test:
-    env:
+    env:                                                          # env variable job based demo 
       MONGODB_CLUSTER_ADDRESS: mongodb-test.l07s5.mongodb.net
       MONGODB_USERNAME: maintain
       MONGODB_PASSWORD: Sad6844!!!
