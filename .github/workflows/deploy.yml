@@ -8,9 +8,10 @@ env:
   MONGODB_DB_NAME: gha-demo                                       # environment variable global demo
 jobs:
   test:
+    environment: testing
     env:                                                          # env variable job based demo 
       MONGODB_CLUSTER_ADDRESS: mongodb-test.l07s5.mongodb.net
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}           # secrets example 
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD}}
       PORT: 8080
     runs-on: ubuntu-latest 
